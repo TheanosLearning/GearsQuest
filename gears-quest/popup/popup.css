@@ -1,0 +1,66 @@
+@font-face {
+    font-family: gearsOfWar;
+    /*Jacinto Sans*/
+    src: url("Gears of War.ttf");
+}
+html {
+    width: 400px;
+    height: 500px;
+}
+body {
+    box-sizing: border-box;
+    color: white;
+    background-image: url("popup-background.png");
+    font-family: gearsOfWar;
+    text-align: center;
+}
+header {
+    padding: 20px 0 20px 0;
+    background-color: #da2317;
+    color: white;
+    font-size: 120%;
+    -webkit-animation: typing 8s steps(14, end), blink-caret .5s step-end infinite alternate;
+}
+main {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.glowing-border {
+    width: 60%;
+    height: 10%;
+    font-family: Ubuntu;
+    border: 2px solid #dadada;
+    border-radius: 5px;
+}
+.glowing-border:focus {
+    outline: none;
+    border-color: #5cb85c;
+    box-shadow: 0 0 10px #5cb85c;
+}
+.glowing-border:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+.update {
+    background-color: rgba(218, 35, 23, 0.8);
+    border-color: black;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: gearsOfWar;
+}
+.update:hover {
+    transition: 0.1s linear;
+    background-color: #da2317;
+}
+.confirm {
+    background-color: #5cb85c !important;
+    transition: all 0.8s ease-out !important;
+}

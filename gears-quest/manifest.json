@@ -1,0 +1,41 @@
+{
+  "manifest_version": 2,
+  "name": "Gears Quest Notifications",
+  "version": "1.0",
+  "description": "Sends live.gearsofwar quest notifications to your Gmail.",
+  "icons": {
+    "48": "img/reward48.png",
+    "128": "img/reward128.png"
+  },
+  "browser_action": {
+    "default_icon": "img/reward.png",
+    "default_popup": "popup/popup.html"
+  },
+  "background": {
+    "scripts": [
+      "background/quest-notifier.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://live.gearsofwar.com/*"
+      ],
+      "js": [
+        "content/html2canvas.js",
+        "content/quest-monitor.js"
+      ]
+    }
+  ],
+  "content_security_policy": "script-src 'self' https://apis.google.com; object-src 'self'",
+  "oauth2": {
+    "client_id": "541295920508-ov1hmsilp3ap7v50iedlj6mf1aca44bf.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/gmail.send"
+    ]
+  },
+  "permissions": [
+    "identity",
+    "storage"
+  ]
+}
