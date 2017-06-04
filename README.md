@@ -5,5 +5,6 @@
 #### Change the confirmation email address by clicking the extension icon
 ![popup-demo](https://media.giphy.com/media/zeKBFQXfuO7ba/giphy.gif)
 
-#### If you are using Gmail, push notifications and a confirmation email will be sent to you mobile device
+#### You will be sent a confirmation email with a screenshot of the claimed reward
+`If you are using Gmail on a mobile device, this means you will also receive a push notification`
 ![email](https://github.com/TheanosLearning/GearsQuest/raw/master/images/email-notification-mobile.png)
