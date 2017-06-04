@@ -1,7 +1,8 @@
 {
   "manifest_version": 2,
   "name": "Gears of War 4 Quest Claimer",
-  "version": "1.0.0",
+  "short_name": "Gears4 QC",
+  "version": "1.0.1",
   "description": "Claims rewards on live.gearsofwar.com and sends email notifications.",
   "icons": {
     "48": "img/reward48.png",
