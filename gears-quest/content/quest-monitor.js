@@ -1,75 +1,63 @@
-const marquee = {
-	text: "Gears Quest",
-	style: "font-size:40px;color:#da2317;font-family:Arial Black;"
-}
+// check for updates every 30 sec
+setInterval(checkQuests, 30 * 1000);
 
-// wait for page to load and then select `Quests` tab
-//setTimeout(selectQuestsTab, 10 * 1000);
-
-// check for updates every 10 sec
-//setInterval(checkQuests, 10 * 1000);
-
-let questsLoaded = false;
+let questIds = new Set();
 
 function selectQuestsTab() {
     let sidebar = document.getElementById('sidebar');
-    let footer = sidebar.querySelector('div.footer');
-    let quests = Array.from(footer.children).filter(item => item.innerText === "Quests").pop();
+    let tabs = sidebar.querySelector('div.footer');
+    let quests = Array.from(tabs.children).filter(item => item.innerText === "Quests").pop();
     if (quests && !quests.className.includes("active")) {
         quests.click();
     }
-    questsLoaded = true;
 }
 
 function checkQuests() {
-    if (questsLoaded) {
-        let sidebar = document.getElementById('sidebar');
-        let quest = sidebar.querySelectorAll('[data-quest-id]')[0];
-        let rewardBtn = quests.querySelector('.reward .button');
-        if (rewardBtn.innerText.toUpperCase().includes("SUBMIT ENTRY")) {
-            // claim the reward and send out an email notification
-            rewardBtn.click();
-            getDataUrl();
-        }
+    selectQuestsTab();
+    let sidebar = document.getElementById('sidebar');
+    let quests = Array.from(sidebar.querySelectorAll('div.quest-wrapper.completed'));
+    quests.map(q => claim(q));
+}
+
+// when reward is officially ready, claim and send email notification
+function claim(quest) {
+    let questId = quest.dataset.questId;
+    let claimable = !questIds.has(questId);
+    if (claimable) {
+        let rewardBtn = quest.querySelector('.reward .button');
+        rewardBtn.click();
+        // click outside of confirmation text
+        setTimeout(document.querySelector('.dobi-modal-backdrop').click(), 2000);
+        questIds.add(questId);
+        setTimeout(() => getDataUrl(quest), 5000);
     }
 }
 
-function getDataUrl() {
-    // let sidebar = document.getElementById('sidebar');
-    // let quest = sidebar.querySelectorAll('[data-quest-id]')[0];
-    // let reward = quest.querySelector('.reward-description');
-    // html2canvas(reward, {
-    //     onrendered: function(canvas) {
-    //     	let imgBase64 = canvas.toDataURL("image/png")
-    //     	notifyUser(imgBase64);
-            
-    //     }
-    // });
-    
-    let sidebar = document.getElementById('sidebar');
-    let chat = sidebar.querySelector('.icon.icon-chat');
-    
-    html2canvas(chat, {
+function getDataUrl(quest) {
+    html2canvas(quest, {
         onrendered: function(canvas) {
         	let imgBase64 = canvas.toDataURL("image/png");
-        	notifyUser(imgBase64);
+            let title = quest.querySelector('.title').innerText;
+        	notifyUser(imgBase64, title);
         }
     });
 }
 
-function notifyUser(imgBase64) {
+function notifyUser(imgBase64, rewardTitle) {
     chrome.runtime.sendMessage({
-        image: imgBase64.replace('data:image/png;base64,', '')
+        rewardImage: imgBase64.replace('data:image/png;base64,', ''),
+        rewardTitle: rewardTitle
     }, function(response) {
-    	console.clear();
-    	console.log("%c" + marquee.text, marquee.style);
-        console.info("Sending quest update notification to user.");
+        questLog("Quest claimed! Sending notification to user.");
     });
 }
 
-function init() {
-	let footer = document.getElementById('footer');
-	footer.addEventListener("click", getDataUrl);
+function questLog(message) {
+    const marquee = {
+        text: "Gears Quest",
+        style: "font-size:40px;color:#da2317;font-family:Arial Black;"
+    }
+    console.clear();
+    console.log("%c" + marquee.text, marquee.style);
+    console.info(message);
 }
-
-window.onload = init;

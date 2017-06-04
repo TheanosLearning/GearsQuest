@@ -1,6 +1,6 @@
 chrome.runtime.onMessage.addListener(
     function(req) {
-        imgur.uploadImg(req.image);
+        imgur.uploadImg(req.rewardImage, req.rewardTitle);
     }
 );
 
@@ -9,8 +9,8 @@ function webSafeBase64(email) {
   return btoa(email).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 }
 
-function sendEmail(imgURL = "http://i.imgur.com/U8a2EHc.png") {
-  gmail.xhrWithAuth(imgURL);
+function sendEmail(imgURL = "http://i.imgur.com/U8a2EHc.png", imgTitle = "Quest Reward") {
+  gmail.xhrWithAuth(imgURL, imgTitle);
 }
 
 // imgur API v3 https://apidocs.imgur.com
@@ -20,12 +20,12 @@ let imgur = {
     albumHash: '8LR9FGKu85h2ALx',
     uploadURL: 'https://api.imgur.com/3/image',
 
-    uploadImg(imgBase64) {
+    uploadImg(imgBase64, title) {
 
         let data = new FormData();
         data.append("image", imgBase64);
         data.append("album", imgur.albumHash);
-        data.append("title", "QuestIcon");
+        data.append("title", title);
         data.append("type", "base64");
 
         let headers = new Headers();
@@ -40,7 +40,7 @@ let imgur = {
         fetch(imgurRequest).then((res) =>
             res.json()).then((rJson) => {
             let imgURL = rJson.data.link.replace('http:', 'https:');
-            sendEmail(imgURL);
+            sendEmail(imgURL, title);
         });
     }
 }
@@ -50,7 +50,7 @@ let gmail = {
     errorRetry: true,
     url: "https://www.googleapis.com/gmail/v1/users/me/messages/send?alt=json",
 
-    xhrWithAuth(imgURL) {
+    xhrWithAuth(rewardImgURL, rewardTitle) {
         let access_token;
         getToken();
 
@@ -75,25 +75,25 @@ let gmail = {
             xhr.onload = requstComplete;
 
             chrome.storage.sync.get("emailTo", (storage) => {
-                // gmail template
+                // email template
+                const bodyStyle = "style=\"background-position: 50% 30%;color:white;background-image:url(https://static-cdn.jtvnw.net/jtv_user_pictures/gearsofwar-channel_offline_image-d199e49000f76bc5-1920x1080.jpeg)\"";
+                const h1Style = "style=\"background-color:#da2317;padding:5px;text-align:center\"";
+                // TODO: use ES6 template literals
                 let email =
                     "To: " + storage.emailTo + "\r\n" +
-                    "Subject: Gears Quest Update!\r\n" +
+                    "Subject: Gears Quest\r\n" +
                     "Content-Type: text/html; charset=utf-8\r\n" +
                     "Content-Transfer-Encoding: base64\r\n\r\n" +
 
-                    "<body>" +
-                      "<h1>Gears Live Notification</h1>" +
-                      "<p>A new quest is ready for you to view:</p>" +
+                    "<body " + bodyStyle + ">" +
+                      "<header>" +
+                        "<h1 " + h1Style + ">The " + rewardTitle + " has been claimed!</h1>" +
+                      "</header>" +
                       "<p>" +
                         "<a href=\"http://live.gearsofwar.com\" target=\"_blank\">" +
-                          "<img src=\"" + imgURL + "\" alt=\"Test\"/>" +
+                          "<img src=\"" + rewardImgURL + "\" alt=\"@live.gearsofwar.com\"/>" +
                         "</a>" +
                       "</p>" +
-                      "<p>" +
-                        "<b>Quest Description:</b>" +
-                      "</p>" +
-                      "<p>Description of the reward goes here</p>" +
                     "</body>";
 
                 let emailWebSafeBase64 = webSafeBase64(email);
