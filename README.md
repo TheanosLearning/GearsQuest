@@ -11,5 +11,5 @@
 ### View the console logs to monitor updates:
 ![logs](https://github.com/TheanosLearning/GearsQuest/raw/master/images/console-logs.png)
 
-### For help with using the live stream integrations, see:
+### Additional help with live stream integrations:
 [Gears eSports Live Stream FAQ](https://gearsofwar.com/en-us/esports/live-stream-help)
