@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "Gears Quest Notifications",
-  "version": "1.0",
-  "description": "Sends live.gearsofwar quest notifications to your Gmail.",
+  "name": "Gears of War 4 Quest Claimer",
+  "version": "1.0.0",
+  "description": "Claims rewards on live.gearsofwar.com and sends email notifications.",
   "icons": {
     "48": "img/reward48.png",
     "128": "img/reward128.png"
