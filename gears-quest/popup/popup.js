@@ -1,7 +1,6 @@
 window.onload = showPopup;
 
 function showPopup() {
-
     let update = document.getElementById('updateEmail');
     let emailTo = document.getElementById('emailTo');
 
@@ -22,5 +21,4 @@ function showPopup() {
         update.classList.add('confirm');
         setTimeout(close, 800);
     }
-
 }
