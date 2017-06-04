@@ -14,6 +14,7 @@ function selectQuestsTab() {
 
 function checkQuests() {
     selectQuestsTab();
+    questLog("Checking for quest updates.");
     let sidebar = document.getElementById('sidebar');
     let quests = Array.from(sidebar.querySelectorAll('div.quest-wrapper.completed'));
     quests.map(q => claim(q));
@@ -24,6 +25,7 @@ function claim(quest) {
     let questId = quest.dataset.questId;
     let claimable = !questIds.has(questId);
     if (claimable) {
+        questLog("Quest " + questId + " is claimable.");
         let rewardBtn = quest.querySelector('.reward .button');
         rewardBtn.click();
         // click outside of confirmation text
@@ -57,7 +59,6 @@ function questLog(message) {
         text: "Gears Quest",
         style: "font-size:40px;color:#da2317;font-family:Arial Black;"
     }
-    console.clear();
     console.log("%c" + marquee.text, marquee.style);
-    console.info(message);
+    console.info(`[${marquee.text}] ${message}`);
 }
