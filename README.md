@@ -7,3 +7,6 @@
 
 ### You will be sent a confirmation email with a screenshot of the claimed reward:
 ![email](https://github.com/TheanosLearning/GearsQuest/raw/master/images/email-notification-mobile.png)
+
+### For more help with using the live stream integrations:
+[Gears eSports Live Stream FAQ](https://gearsofwar.com/en-us/esports/live-stream-help)
