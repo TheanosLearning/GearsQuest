@@ -2,6 +2,7 @@
 
 ## Monitors [live.gearsofwar](http://live.gearsofwar.com/) for new quests and claims rewards on your behalf.
 <br/>
+
 ### Click the extension icon to send notifications to an alternate email address:
 ![popup-demo](https://media.giphy.com/media/zeKBFQXfuO7ba/giphy.gif)
 
@@ -12,6 +13,6 @@
 ![console logs](https://github.com/TheanosLearning/GearsQuest/raw/master/images/console-logs.png)
 <br/>
 <br/>
-<br/>
+
 ### Additional help with live stream integrations:
 [Gears eSports Live Stream FAQ](https://gearsofwar.com/en-us/esports/live-stream-help)
