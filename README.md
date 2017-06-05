@@ -9,7 +9,7 @@
 ![email](https://github.com/TheanosLearning/GearsQuest/raw/master/images/email-notification-mobile.png)
 
 ### View the console logs to monitor updates:
-![logs](https://github.com/TheanosLearning/GearsQuest/raw/master/images/console-logs.png)
+![console logs](https://github.com/TheanosLearning/GearsQuest/raw/master/images/console-logs.png)
 
 ### Additional help with live stream integrations:
 [Gears eSports Live Stream FAQ](https://gearsofwar.com/en-us/esports/live-stream-help)
