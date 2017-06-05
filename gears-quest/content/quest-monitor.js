@@ -29,9 +29,9 @@ function claim(quest) {
         let rewardBtn = quest.querySelector('.reward .button');
         rewardBtn.click();
         // click outside of confirmation text
-        setTimeout(document.querySelector('.dobi-modal-backdrop').click(), 2000);
+        setTimeout(document.querySelector('.dobi-modal-backdrop').click(), 5 * 1000);
         questIds.add(questId);
-        setTimeout(() => getDataUrl(quest), 5000);
+        setTimeout(() => getDataUrl(quest), 10 * 1000);
     }
 }
 
