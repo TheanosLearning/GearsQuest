@@ -5,7 +5,7 @@
 ### Click the extension icon to send notifications to an alternate email address:
 ![popup-demo](https://media.giphy.com/media/zeKBFQXfuO7ba/giphy.gif)
 
-### You will receive a confirmation email once Gears Quest has claimed the reward for you:
+### You will receive a confirmation email once `Gears Quest` has claimed the reward for you:
 ![email](https://github.com/TheanosLearning/GearsQuest/raw/master/images/email-notification-mobile.png)
 
 ### View the console logs to monitor updates:
