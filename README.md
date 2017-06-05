@@ -1,7 +1,8 @@
+> This project is currently in [beta](https://en.wikipedia.org/wiki/Software_release_life_cycle#Beta)
+
 ![logo](https://github.com/TheanosLearning/GearsQuest/raw/master/images/gears-quest-logo.png)
 
 ## Monitors [live.gearsofwar](http://live.gearsofwar.com/) for new quests and claims rewards on your behalf.
-> This project is currently in beta
 
 ### Click the extension icon to send notifications to an alternate email address:
 ![popup-demo](https://media.giphy.com/media/zeKBFQXfuO7ba/giphy.gif)
