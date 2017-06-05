@@ -8,7 +8,7 @@
 ### You will receive a confirmation email once `Gears Quest` has claimed the reward for you:
 ![email](https://github.com/TheanosLearning/GearsQuest/raw/master/images/email-notification-mobile.png)
 
-### (Optional) view Console logs to monitor updates:
+### View logs in the developer console to monitor updates (optional):
 ![console logs](https://github.com/TheanosLearning/GearsQuest/raw/master/images/console-logs.png)
 <br/>
 <br/>
