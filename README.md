@@ -1,4 +1,4 @@
-> This project is currently in [Beta](https://en.wikipedia.org/wiki/Software_release_life_cycle#Beta)
+> Note: this project is currently in [Beta](https://en.wikipedia.org/wiki/Software_release_life_cycle#Beta)
 
 ![logo](https://github.com/TheanosLearning/GearsQuest/raw/master/images/gears-quest-logo.png)
 
