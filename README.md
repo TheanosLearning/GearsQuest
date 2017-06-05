@@ -13,5 +13,5 @@
 <br/>
 <br/>
 
-### Additional help with live stream integrations:
+### Additional help with using live stream integrations:
 [Gears eSports Live Stream FAQ](https://gearsofwar.com/en-us/esports/live-stream-help)
