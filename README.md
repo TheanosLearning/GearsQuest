@@ -2,7 +2,6 @@
 
 ## Monitors [live.gearsofwar](http://live.gearsofwar.com/) for new quests and claims rewards on your behalf.
 <br/>
-
 ### Click the extension icon to send notifications to an alternate email address:
 ![popup-demo](https://media.giphy.com/media/zeKBFQXfuO7ba/giphy.gif)
 
