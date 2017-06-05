@@ -2,7 +2,7 @@
 
 ## Monitors [live.gearsofwar](http://live.gearsofwar.com/) for new quests and claims rewards on your behalf.
 
-### Change the notifications email by clicking the extension icon:
+### Click the extension icon to send notifications to an alternative email address:
 ![popup-demo](https://media.giphy.com/media/zeKBFQXfuO7ba/giphy.gif)
 
 ### You will be sent a confirmation email with a screenshot of the claimed reward:
