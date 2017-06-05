@@ -1,4 +1,4 @@
-> Note this Chrome extension is currently in [Beta](https://en.wikipedia.org/wiki/Software_release_life_cycle#Beta). If you are interested in using/testing the extension please join the Gears Project Development channel on Discord:<br/><br/> [![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/9yhnD)
+> Note this Chrome extension is currently in [Beta](https://en.wikipedia.org/wiki/Software_release_life_cycle#Beta). If you are interested in using/testing the extension please join the Gears Project Development channel on Discord:<br/><br/> [![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/NvjBC7E)
 
 ![logo](https://github.com/TheanosLearning/GearsQuest/raw/master/images/gears-quest-logo.png)
 
