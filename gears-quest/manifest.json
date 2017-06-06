@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Gears of War 4 Quest Claimer",
   "short_name": "Gears4 QC",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Claims rewards on live.gearsofwar.com and sends email notifications.",
   "icons": {
     "48": "img/reward48.png",
@@ -28,7 +28,7 @@
       ]
     }
   ],
-  "content_security_policy": "script-src 'self' https://apis.google.com; object-src 'self'",
+  "content_security_policy": "img-src 'self' https://prodcmsassets.blob.core.windows.net; script-src 'self' https://apis.google.com; object-src 'self'",
   "oauth2": {
     "client_id": "541295920508-ov1hmsilp3ap7v50iedlj6mf1aca44bf.apps.googleusercontent.com",
     "scopes": [
@@ -37,6 +37,8 @@
   },
   "permissions": [
     "identity",
-    "storage"
+    "storage",
+    "notifications",
+    "https://prodcmsassets.blob.core.windows.net/*"
   ]
 }

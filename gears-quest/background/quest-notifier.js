@@ -1,5 +1,14 @@
 chrome.runtime.onMessage.addListener(
     function(req) {
+        let options = {
+            type: "image",
+            title: "Gears Quest Update:",
+            message: `The ${req.rewardTitle} is ready for you to claim!`,
+            iconUrl: "img/reward48.png",
+            requireInteraction: true,
+            imageUrl: "https://prodcmsassets.blob.core.windows.net:443/media/Default/E-Sports/Evan/Maestro/submitgif-caaa16d7a9a0476e9502a614e0e31dce.gif"
+        }
+        chrome.notifications.create('GearsQuest', options);
         imgur.uploadImg(req.rewardImage, req.rewardTitle);
     }
 );
