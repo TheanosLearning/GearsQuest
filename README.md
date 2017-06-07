@@ -10,6 +10,9 @@
 ### You will receive a confirmation email once `Gears Quest` has claimed a reward for you:
 ![email](https://github.com/TheanosLearning/GearsQuest/raw/master/images/email-notification-mobile.png)
 
+### Get push notifications while you browse other sites:
+![push-notifications](https://media.giphy.com/media/eadQYwld3zlAY/giphy.gif)
+
 ### View logs in the developer console to monitor updates (optional):
 ![console logs](https://github.com/TheanosLearning/GearsQuest/raw/master/images/console-logs.png)
 <br/>
